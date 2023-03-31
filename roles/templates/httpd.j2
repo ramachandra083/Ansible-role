@@ -1,0 +1,10 @@
+<VirtualHost {{ ansible_eth1.ipv4.address }}:80>
+ServerAdmin root@{{ ansible_fqdn }}
+ServerName {{ ansible_nodename }}
+DocumentRoot /var/www/html
+</VirtualHost>
+
+<Directory "/var/www/html">
+AllowOverride None
+Require all granted
+</Directory>

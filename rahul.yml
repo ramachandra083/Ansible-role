@@ -1,0 +1,7 @@
+---
+- name: Create Roles
+  hosts: all
+  become: true
+  remote_user: root
+  roles: 
+    - roles

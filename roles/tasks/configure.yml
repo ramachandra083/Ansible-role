@@ -1,0 +1,7 @@
+---
+- name: Copy httpd configuration file
+  template: src=templates/httpd.j2 dest="/etc/httpd/conf.d/{{ ansible_hostname }}.conf" force=yes 
+  notify:
+  - restart-apache
+- name: Copy index.html file
+  copy: src=files/index.html dest=/var/www/html
